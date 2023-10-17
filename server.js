@@ -1,13 +1,17 @@
 const express = require('express');
 
 const PORT = 8080;
-const HOST = '127.0.0.1';
+const HOST = '0.0.0.0';
 
 const app = express();
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get('/', function(req, res) {
+  res.send('Hello World Again!');
 });
 
-app.listen(PORT, HOST, () => {
+app.get('/:fname', function(req, res){
+  res.send('Hello '+req.params.fname);
+});
+
+app.listen(PORT, HOST, function() {
   console.log(`Running on http://${HOST}:${PORT}`);
 });

@@ -7,4 +7,4 @@ services:
     container_name: docker-express
     restart: always
     ports:
-      - 49161:8081
+      - 49160:8081
